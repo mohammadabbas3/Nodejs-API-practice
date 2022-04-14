@@ -6,7 +6,8 @@ const signUp = (req, res) => {
         const { body } = req
         let addData = new Signup(body)
         addData.save()
-        return res.send({ success: true })
+        console.log('data',addData)
+        return res.send({ success: true, addData })
     } catch (e) {
         return res.send({ success: false, message: 'Something Went Wrong!' })
     }
